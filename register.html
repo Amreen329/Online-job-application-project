@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Application Registration</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(120deg, #f6d365, #fda085);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    .register-container h2 {
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #218838;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer-text a {
+      color: #28a745;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="favorite_job.html">Job Role</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="application.html">Job Application</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    background-color: #ffffffdd;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  nav ul li a:hover {
+    background-color: #e0e0e0;
+  }
+
+  /* Adjust body top padding to prevent overlap with navbar */
+  body {
+    padding-top: 70px;
+  }
+</style>
+  <form class="register-container" onsubmit="return validateRegistration()">
+    <h2>Create an Account</h2>
+
+    <div class="form-group">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="9"
+        pattern="(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[\W_]).{9,}"
+        title="Password must be at least 9 characters long and include a lowercase, uppercase, number, and special character."
+      >
+    </div>
+
+    <button type="submit" class="register-btn">Register</button>
+
+    <div class="footer-text">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </form>
+
+  <script>
+    function validateRegistration() {
+      const password = document.getElementById("password");
+      const pattern = new RegExp(password.pattern);
+      if (!pattern.test(password.value)) {
+        alert(password.title);
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>

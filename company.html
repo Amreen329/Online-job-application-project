@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Company List | Job Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      padding-top: 80px;
+    }
+
+    nav {
+      background-color: #ffffffdd;
+      backdrop-filter: blur(10px);
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background-color: #e0e0e0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .filters input,
+    .filters select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      flex-grow: 1;
+      max-width: 300px;
+    }
+
+    .companies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .company-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .company-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .company-card h3 {
+      margin: 0 0 10px;
+    }
+    .company-card p {
+      margin: 6px 0;
+    }
+    .rating {
+      color: #fbc02d;
+    }
+    .apply-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #333;
+      color: white;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .apply-btn:hover {
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="favorite_job.html">Job Role</a></li>
+           <li><a href="company.html">Company</a></li>
+      <li><a href="application.html">Job Application</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 style="text-align:center;">Explore Companies</h1>
+
+    <div class="filters">
+      <input type="text" placeholder="Search by company name..." />
+      <select>
+        <option value="">Filter by industry</option>
+        <option value="tech">Technology</option>
+        <option value="design">Design</option>
+        <option value="marketing">Marketing</option>
+        <option value="analytics">Analytics</option>
+      </select>
+    </div>
+
+    <div class="companies">
+      <div class="company-card">
+        <h3>Google</h3>
+        <p>Roles: Software Engineer, Product Manager</p>
+        <p>Location: Remote & On-site</p>
+        <p class="rating">Rating: ★★★★★</p>
+        <a href="favorite_job.html?company=Google" class="apply-btn">View Jobs</a>
+      </div>
+      <div class="company-card">
+        <h3>Microsoft</h3>
+        <p>Roles: Data Analyst, Cloud Engineer</p>
+        <p>Location: Hybrid</p>
+        <p class="rating">Rating: ★★★★☆</p>
+        <a href="favorite_job.html?company=Microsoft" class="apply-btn">View Jobs</a>
+      </div>
+      <div class="company-card">
+        <h3>Canva</h3>
+        <p>Roles: UI/UX Designer, Marketing Specialist</p>
+        <p>Location: Remote</p>
+        <p class="rating">Rating: ★★★★☆</p>
+        <a href="favorite_job.html?company=Canva" class="apply-btn">View Jobs</a>
+      </div>
+      <div class="company-card">
+        <h3>Amazon</h3>
+        <p>Roles: Backend Developer, Data Engineer</p>
+        <p>Location: On-site</p>
+        <p class="rating">Rating: ★★★★☆</p>
+        <a href="favorite_job.html?company=Amazon" class="apply-btn">View Jobs</a>
+      </div>
+      <div class="company-card">
+        <h3>LinkedIn</h3>
+        <p>Roles: Data Scientist, Frontend Developer</p>
+        <p>Location: Remote & On-site</p>
+        <p class="rating">Rating: ★★★★★</p>
+        <a href="favorite_job.html?company=LinkedIn" class="apply-btn">View Jobs</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

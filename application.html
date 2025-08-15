@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 50%; margin: 0 auto; padding: 20px; }
+        .input-field { margin: 10px 0; width: 100%; padding: 8px; }
+        .btn { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; }
+        .btn:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Job Application Form</h2>
+        <form action="submit_application.html" method="POST">
+            <input type="text" name="full_name" class="input-field" placeholder="Full Name" required>
+            <input type="email" name="email" class="input-field" placeholder="Email" required>
+            <input type="text" name="phone" class="input-field" placeholder="Phone Number" required>
+            <textarea name="cover_letter" class="input-field" placeholder="Cover Letter" rows="4" required></textarea>
+            <label for="resume">Upload Resume:</label>
+            <input type="file" name="resume" class="input-field" accept=".pdf, .docx" required>
+            <button type="submit" class="btn">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>
